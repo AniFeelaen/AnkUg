@@ -183,11 +183,15 @@ export function AppealsListPage() {
 
       {query.isError ? (
         <div
-          className="rounded-lg border border-rose-200 bg-rose-50 p-4 text-rose-800"
+          className="rounded-lg border border-amber-200 bg-amber-50 p-4 text-amber-950"
           role="alert"
         >
-          <p className="font-medium">Не удалось загрузить обращения</p>
-          <p className="mt-1 text-sm">
+          <p className="font-medium">Демо-режим: показываем пример данных</p>
+          <p className="mt-1 text-sm text-amber-900/90">
+            Бэкенда нет — если что-то пошло не так, ниже деталь. Можно
+            повторить запрос.
+          </p>
+          <p className="mt-2 font-mono text-xs text-amber-800/80">
             {query.error instanceof Error
               ? query.error.message
               : 'Неизвестная ошибка'}

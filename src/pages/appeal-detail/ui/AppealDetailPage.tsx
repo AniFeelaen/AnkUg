@@ -78,11 +78,15 @@ export function AppealDetailPage() {
   if (query.isError) {
     return (
       <div
-        className="rounded-lg border border-rose-200 bg-rose-50 p-6 text-rose-900"
+        className="rounded-lg border border-amber-200 bg-amber-50 p-6 text-amber-950"
         role="alert"
       >
-        <p className="font-semibold">Обращение недоступно</p>
-        <p className="mt-2 text-sm">
+        <p className="font-semibold">Демо-режим: показываем пример данных</p>
+        <p className="mt-2 text-sm text-amber-900/90">
+          Карточка не загрузилась. Деталь ниже — можно вернуться к списку или
+          повторить.
+        </p>
+        <p className="mt-2 font-mono text-xs text-amber-800/80">
           {query.error instanceof Error
             ? query.error.message
             : 'Ошибка загрузки'}

@@ -5,25 +5,12 @@ import { App } from './App';
 import { AppProviders } from './providers/AppProviders';
 import './styles/index.css';
 
-async function enableMocking(): Promise<void> {
-  if (!import.meta.env.DEV) return;
-  const { worker } = await import('@/shared/api/msw/browser');
-  await worker.start({
-    onUnhandledRequest: 'bypass',
-    serviceWorker: {
-      url: '/mockServiceWorker.js',
-    },
-  });
-}
-
-void enableMocking().then(() => {
-  createRoot(document.getElementById('root')!).render(
-    <StrictMode>
-      <BrowserRouter>
-        <AppProviders>
-          <App />
-        </AppProviders>
-      </BrowserRouter>
-    </StrictMode>
-  );
-});
+createRoot(document.getElementById('root')!).render(
+  <StrictMode>
+    <BrowserRouter>
+      <AppProviders>
+        <App />
+      </AppProviders>
+    </BrowserRouter>
+  </StrictMode>
+);

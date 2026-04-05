@@ -5,9 +5,9 @@ import type {
   AppealsSortField,
   SortOrder,
 } from '@/entities/appeal/model/appealModel';
-import { appealsSeed } from './data/appealsSeed';
+import { mockAppeals } from './mockData';
 
-let rows: Appeal[] = appealsSeed.map((a) => ({ ...a }));
+let rows: Appeal[] = mockAppeals.map((a) => ({ ...a }));
 
 const statusRank: Record<AppealStatus, number> = {
   new: 0,
@@ -34,8 +34,8 @@ function compare(
   return (ta - tb) * dir;
 }
 
-export function resetAppealsStore(): void {
-  rows = appealsSeed.map((x) => ({ ...x }));
+export function resetDemoAppealsStore(): void {
+  rows = mockAppeals.map((x) => ({ ...x }));
 }
 
 export function listAppeals(params: AppealsListParams): AppealsListResponse {

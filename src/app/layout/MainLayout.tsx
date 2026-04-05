@@ -14,6 +14,9 @@ export function MainLayout() {
               АНК-ЮГ OS
             </Link>
             <p className="text-xs text-slate-500">Внутренняя ОС · обращения</p>
+            <p className="mt-2 inline-flex rounded-full border border-amber-200 bg-amber-50 px-2.5 py-0.5 text-xs font-medium text-amber-900">
+              🧪 Демо-версия (данные примерные)
+            </p>
           </div>
           <RoleSwitcher />
         </div>

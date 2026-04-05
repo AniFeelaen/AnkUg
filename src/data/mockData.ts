@@ -6,12 +6,40 @@ function iso(daysAgo: number): string {
   return d.toISOString();
 }
 
-/** Начальный набор обращений для мок-API. */
-export const appealsSeed: Appeal[] = [
+/**
+ * Статичный набор для демо (Vercel без бэкенда).
+ * Первые три — короткие примеры; далее — расширенный список для UI.
+ */
+export const mockAppeals: Appeal[] = [
+  {
+    id: 'demo-1',
+    title: 'Пример обращения 1',
+    description: 'Короткое демо-описание для презентации.',
+    status: 'new',
+    createdAt: '2024-01-15T12:00:00.000Z',
+    updatedAt: '2024-01-15T12:00:00.000Z',
+  },
+  {
+    id: 'demo-2',
+    title: 'Пример обращения 2',
+    description: 'В работе — пример статуса.',
+    status: 'in_progress',
+    createdAt: '2024-01-16T12:00:00.000Z',
+    updatedAt: '2024-01-16T12:00:00.000Z',
+  },
+  {
+    id: 'demo-3',
+    title: 'Пример обращения 3',
+    description: 'Закрытый кейс для демонстрации.',
+    status: 'resolved',
+    createdAt: '2024-01-17T12:00:00.000Z',
+    updatedAt: '2024-01-17T12:00:00.000Z',
+  },
   {
     id: 'apl-001',
     title: 'Сбой выгрузки в 1С',
-    description: 'После обновления модуля интеграции перестала проходить выгрузка заказов.',
+    description:
+      'После обновления модуля интеграции перестала проходить выгрузка заказов.',
     status: 'in_progress',
     createdAt: iso(2),
     updatedAt: iso(0),
@@ -29,7 +57,8 @@ export const appealsSeed: Appeal[] = [
   {
     id: 'apl-003',
     title: 'Дубли контрагентов при импорте',
-    description: 'При загрузке из Excel создаются повторные карточки с тем же ИНН.',
+    description:
+      'При загрузке из Excel создаются повторные карточки с тем же ИНН.',
     status: 'resolved',
     createdAt: iso(5),
     updatedAt: iso(3),
@@ -85,7 +114,8 @@ export const appealsSeed: Appeal[] = [
   {
     id: 'apl-010',
     title: 'Блокировка пользователя',
-    description: 'Учётная запись блокируется после трёх неверных попыток без таймера.',
+    description:
+      'Учётная запись блокируется после трёх неверных попыток без таймера.',
     status: 'closed',
     createdAt: iso(30),
     updatedAt: iso(25),
@@ -109,7 +139,8 @@ export const appealsSeed: Appeal[] = [
   {
     id: 'apl-013',
     title: 'Мобильное приложение: крэш при фото',
-    description: 'Приложение падает при прикреплении фото к обращению на Android 14.',
+    description:
+      'Приложение падает при прикреплении фото к обращению на Android 14.',
     status: 'in_progress',
     createdAt: iso(2),
     updatedAt: iso(0),
